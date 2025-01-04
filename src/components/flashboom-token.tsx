@@ -15,6 +15,15 @@ const FlashBoomToken = () => {
   const TWITTER_URL = "https://x.com/FlashBoomToken";
   const BSCSCAN_URL = "https://bscscan.com/token/0xf6921b5bdab9480e35eb8915b53ec38581e4f004";
 
+   // Simulating token burn updates
+   useEffect(() => {
+    const timer = setInterval(() => {
+      setBurnedTokens(prev => prev + Math.floor(Math.random() * 10));
+    }, 30000); // Updates every 30 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+  
   const copyAddress = () => {
     navigator.clipboard.writeText(contractAddress);
   };

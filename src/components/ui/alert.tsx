@@ -6,11 +6,17 @@ export interface AlertProps {
   /**
    * The message or content to display inside the alert.
    */
-  message: string | React.ReactNode;
+  message?: string | React.ReactNode;
   /**
    * Type of alert affecting the color styling.
    */
   type?: 'success' | 'info' | 'warning' | 'error';
+  className?: string;
+  /**
+   * If you want to override the default content (`message`), 
+   * you can also pass children directly.
+   */
+  children?: React.ReactNode;
 }
 
 export function Alert({ message, type = 'info' }: AlertProps) {
@@ -40,8 +46,17 @@ export interface AlertDescriptionProps {
    * Text or elements that provide additional details for the alert.
    */
   children: React.ReactNode;
+  className?: string;
 }
 
-export function AlertDescription({ children }: AlertDescriptionProps) {
-  return <p className="text-sm mt-2">{children}</p>;
+export function AlertDescription({
+  children,
+  className = '',
+}: AlertDescriptionProps) {
+  return (
+    <p className={`text-sm mt-2 ${className}`}>
+      {children}
+    </p>
+  );
 }
+

@@ -39,7 +39,84 @@ const FlashBoomToken = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white">
-      {/* [Sections précédentes identiques...] */}
+            {/* Hero Section avec effet néon */}
+            <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 via-slate-900 to-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent" />
+        <div className="container mx-auto text-center px-4 relative">
+          <img src="/api/placeholder/200/200" alt="FBM Logo" className="mx-auto mb-8 animate-pulse" />
+          <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
+            FlashBoomToken (FBM)
+          </h1>
+          <p className="text-2xl mb-8 text-blue-300">Explode Your Gains! 🚀</p>
+          <Button 
+            size="lg"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold shadow-lg shadow-blue-500/50"
+            onClick={() => window.open(PANCAKESWAP_URL, "_blank")}
+          >
+            Buy on PancakeSwap
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </section>
+
+  {/* Tokenomics Section */}
+  <section className="py-20 bg-slate-800/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            Tokenomics
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-800 p-6 rounded-lg text-center border border-blue-500/20 shadow-lg shadow-blue-500/5">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">Supply Totale</h3>
+              <p className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                1,000,000 FBM
+              </p>
+            </div>
+            <div className="bg-slate-800 p-6 rounded-lg text-center border border-blue-500/20 shadow-lg shadow-blue-500/5">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">Burn Automatique</h3>
+              <p className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                1% / Transaction
+              </p>
+            </div>
+            <div className="bg-slate-800 p-6 rounded-lg text-center border border-blue-500/20 shadow-lg shadow-blue-500/5">
+              <h3 className="text-xl font-bold mb-4 text-blue-300">Tokens Brûlés</h3>
+              <div className="flex items-center justify-center">
+                <Flame className="text-purple-500 mr-2" />
+                <p className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                  {burnedTokens} FBM
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            Roadmap
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {roadmapSteps.map((step, index) => (
+              <div key={index} className="bg-slate-800/50 p-6 rounded-lg border border-blue-500/20 shadow-lg shadow-blue-500/5">
+                <h3 className="text-xl font-bold mb-4 text-blue-300">{step.title}</h3>
+                <ul className="space-y-2">
+                  {step.items.map((item, i) => (
+                    <li key={i} className="flex items-center">
+                      <div className={`w-2 h-2 rounded-full mr-2 ${
+                        step.status === 'completed' ? 'bg-blue-500' :
+                        step.status === 'ongoing' ? 'bg-purple-500' : 'bg-slate-500'
+                      }`} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* How to Buy Section - Mise à jour du lien BSCScan */}
       <section className="py-20 bg-slate-800/50">
@@ -133,7 +210,16 @@ const FlashBoomToken = () => {
         </div>
       </section>
 
-      {/* [Section Disclaimer identique...] */}
+      <section className="py-10 bg-slate-800/50">
+        <div className="container mx-auto px-4">
+          <Alert className="max-w-3xl mx-auto bg-slate-800 border-blue-500/20">
+            <AlertDescription className="text-blue-100">
+              Les cryptomonnaies sont des investissements très volatils. Faites vos propres recherches (DYOR) 
+              avant d'investir. Cette présentation ne constitue pas un conseil financier.
+            </AlertDescription>
+          </Alert>
+        </div>
+      </section>
     </div>
   );
 };

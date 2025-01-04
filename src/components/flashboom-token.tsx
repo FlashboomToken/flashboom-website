@@ -1,6 +1,6 @@
 "use client";
-// src/components/flashboom-token.tsx
 
+// src/components/flashboom-token.tsx
 
 import React, { useState, useEffect } from 'react';
 import { Rocket, Flame, Copy, ExternalLink, Twitter, MessageCircle } from 'lucide-react';

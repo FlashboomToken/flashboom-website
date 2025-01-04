@@ -1,62 +1,59 @@
-// src/components/ui/alert.tsx
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
 
-import React from 'react';
+import { cn } from "@/src/lib/utils"
 
-export interface AlertProps {
-  /**
-   * The message or content to display inside the alert.
-   */
-  message?: string | React.ReactNode;
-  /**
-   * Type of alert affecting the color styling.
-   */
-  type?: 'success' | 'info' | 'warning' | 'error';
-  className?: string;
-  /**
-   * If you want to override the default content (`message`), 
-   * you can also pass children directly.
-   */
-  children?: React.ReactNode;
-}
-
-export function Alert({ message, type = 'info' }: AlertProps) {
-  const baseClasses = 'rounded p-4 mb-4 text-sm border';
-
-  let colorClasses = '';
-  switch (type) {
-    case 'success':
-      colorClasses = 'bg-green-100 text-green-800 border-green-400';
-      break;
-    case 'warning':
-      colorClasses = 'bg-yellow-100 text-yellow-800 border-yellow-400';
-      break;
-    case 'error':
-      colorClasses = 'bg-red-100 text-red-800 border-red-400';
-      break;
-    default:
-      // info
-      colorClasses = 'bg-blue-100 text-blue-800 border-blue-400';
+const alertVariants = cva(
+  "relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7",
+  {
+    variants: {
+      variant: {
+        default: "bg-background text-foreground",
+        destructive:
+          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
   }
+)
 
-  return <div className={`${baseClasses} ${colorClasses}`}>{message}</div>;
-}
+const Alert = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
+>(({ className, variant, ...props }, ref) => (
+  <div
+    ref={ref}
+    role="alert"
+    className={cn(alertVariants({ variant }), className)}
+    {...props}
+  />
+))
+Alert.displayName = "Alert"
 
-export interface AlertDescriptionProps {
-  /**
-   * Text or elements that provide additional details for the alert.
-   */
-  children: React.ReactNode;
-  className?: string;
-}
+const AlertTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h5
+    ref={ref}
+    className={cn("mb-1 font-medium leading-none tracking-tight", className)}
+    {...props}
+  />
+))
+AlertTitle.displayName = "AlertTitle"
 
-export function AlertDescription({
-  children,
-  className = '',
-}: AlertDescriptionProps) {
-  return (
-    <p className={`text-sm mt-2 ${className}`}>
-      {children}
-    </p>
-  );
-}
+const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm [&_p]:leading-relaxed", className)}
+    {...props}
+  />
+))
+AlertDescription.displayName = "AlertDescription"
 
+export { Alert, AlertTitle, AlertDescription }

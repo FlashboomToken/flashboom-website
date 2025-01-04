@@ -1,3 +1,5 @@
+"use client";
+
 import FlashBoomToken from '@/components/flashboom-token'
 
 export default function Home() {

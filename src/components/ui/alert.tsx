@@ -1,3 +1,4 @@
+"use client";
 // src/components/ui/alert.tsx
 
 import React from 'react';

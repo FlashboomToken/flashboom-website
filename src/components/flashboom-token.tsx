@@ -78,10 +78,10 @@ const FlashBoomToken = () => {
         <div className="container mx-auto text-center px-4 relative z-10">
           <Image src="/flashboom.png" alt="FBM Logo" width={200} height={200} className="mx-auto mb-8"/>
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
-            Explode your gains with FlashBoom (FBM)!
+            Explode Your Gains With FlashBoom (FBM)!
           </h1>
           <p className="text-2xl mb-8 text-blue-300">
-            A deflationary BSC token that is burning 1% every transaction — fueling its unstoppable momentum
+            A deflationary BSC token that's burning 1% every transaction — fueling its unstoppable momentum
           </p>
           
           {/* Key Features */}
@@ -129,7 +129,7 @@ const FlashBoomToken = () => {
       {/* FOMO Banner */}
       <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-center text-white z-50">
         <p className="text-lg">
-          Early adopters see the biggest gains! Do not miss out - 
+          Early adopters see the biggest gains! Don&apos;t miss out - 
           <Button 
             onClick={() => window.open(PANCAKESWAP_URL, "_blank")}
             variant="link" 
@@ -153,7 +153,7 @@ export default FlashBoomToken;
               onClick={() => window.open(PANCAKESWAP_URL, "_blank")}
               className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-8 py-4 text-lg shadow-lg shadow-blue-500/50"
             >
-              Buy FBM now
+              Buy FBM Now
               <ExternalLink className="ml-2 h-5 w-5" />
             </Button>
             <Button 
@@ -161,7 +161,7 @@ export default FlashBoomToken;
               variant="outline"
               className="border-blue-500 text-blue-400 hover:bg-blue-500/10"
             >
-              Join our community
+              Join Our Community
               <Twitter className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -172,11 +172,11 @@ export default FlashBoomToken;
       <section className="py-20 bg-slate-800/50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            Deflationary Tokenomics: skyrocket your gains
+            Deflationary Tokenomics: Skyrocket Your Gains
           </h2>
           <p className="text-center text-blue-300 mb-12 max-w-2xl mx-auto">
             Each transaction burns 1% of FBM, creating constant upward pressure on price.
-            We have ve minted only 1,000,000 FBM tokens to ensure scarcity.
+            We've minted only 1,000,000 FBM tokens to ensure scarcity.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-slate-800 p-6 rounded-lg text-center border border-blue-500/20 shadow-lg shadow-blue-500/5">
@@ -186,13 +186,13 @@ export default FlashBoomToken;
               </p>
             </div>
             <div className="bg-slate-800 p-6 rounded-lg text-center border border-blue-500/20 shadow-lg shadow-blue-500/5">
-              <h3 className="text-xl font-bold mb-4 text-blue-300">Auto-burn rate</h3>
+              <h3 className="text-xl font-bold mb-4 text-blue-300">Auto-Burn Rate</h3>
               <p className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                1% per transaction
+                1% Per Transaction
               </p>
             </div>
             <div className="bg-slate-800 p-6 rounded-lg text-center border border-blue-500/20 shadow-lg shadow-blue-500/5">
-              <h3 className="text-xl font-bold mb-4 text-blue-300">Tokens burned</h3>
+              <h3 className="text-xl font-bold mb-4 text-blue-300">Tokens Burned</h3>
               <p className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
                 {tokensBurned.toLocaleString()} FBM
               </p>
@@ -208,7 +208,7 @@ export default FlashBoomToken;
             Roadmap to the Moon
           </h2>
           <p className="text-center text-blue-300 mb-12 max-w-2xl mx-auto">
-            Each phase is designed to amplify FBMs presence and price growth. Join us in this explosive journey!
+            Each phase is designed to amplify FBM's presence and price growth. Join us in this explosive journey!
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
@@ -235,7 +235,7 @@ export default FlashBoomToken;
       <section className="py-20 bg-slate-800/50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            How to buy FBM
+            How to Buy FBM
           </h2>
           <div className="max-w-2xl mx-auto">
             <div className="bg-slate-800 p-6 rounded-lg mb-6 border border-blue-500/20 shadow-lg shadow-blue-500/5">
@@ -288,7 +288,7 @@ export default FlashBoomToken;
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            Join our explosive community
+            Join Our Explosive Community
           </h2>
           <p className="text-xl text-blue-300 mb-8">Never miss a pump! Follow us and spread the word</p>
           <div className="flex justify-center space-x-6">

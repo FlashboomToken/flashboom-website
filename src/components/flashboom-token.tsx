@@ -61,7 +61,7 @@ const FlashBoomToken: React.FC = () => {
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 via-slate-900 to-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent" />
         <div className="container mx-auto text-center px-4 relative z-10">
-        <Image src="/flashboom-token.png" alt="FBM Logo" width={200} height={200} className="mx-auto mb-8"/>
+        <Image src="/flashboom.png" alt="FBM Logo" width={200} height={200} className="mx-auto mb-8"/>
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
             FlashBoomToken (FBM)
           </h1>

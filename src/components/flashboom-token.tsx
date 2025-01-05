@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Copy, ExternalLink, Twitter } from 'lucide-react';
 import { Alert, AlertDescription } from "./ui/alert";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 interface RoadmapStep {
   title: string;
@@ -60,7 +61,7 @@ const FlashBoomToken: React.FC = () => {
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 via-slate-900 to-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent" />
         <div className="container mx-auto text-center px-4 relative z-10">
-          <img src="/api/placeholder/200/200" alt="FBM Logo" className="mx-auto mb-8 animate-pulse" />
+        <Image src="/api/placeholder/200/200" alt="FBM Logo" width={200} height={200} className="mx-auto mb-8"/>
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
             FlashBoomToken (FBM)
           </h1>
@@ -192,7 +193,7 @@ const FlashBoomToken: React.FC = () => {
           <Alert className="max-w-3xl mx-auto bg-slate-800 border-blue-500/20">
             <AlertDescription className="text-blue-100">
               Les cryptomonnaies sont des investissements très volatils. Faites vos propres recherches (DYOR) 
-              avant d'investir. Cette présentation ne constitue pas un conseil financier.
+              avant d&aposinvestir. Cette présentation ne constitue pas un conseil financier.
             </AlertDescription>
           </Alert>
         </div>

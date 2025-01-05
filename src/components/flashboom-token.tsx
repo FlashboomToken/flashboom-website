@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Copy, ExternalLink, Twitter, Telegram } from 'lucide-react';
+import { Copy, ExternalLink, Twitter } from 'lucide-react';
 import { Alert, AlertDescription } from "./ui/alert";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -15,12 +15,11 @@ interface RoadmapStep {
 const FlashBoomToken: React.FC = () => {
   const [tokensBurned, setTokensBurned] = useState<number>(2451);
   const [holders, setHolders] = useState<number>(1000); // New state for holders count
-  const contractAddress = "0xF6921B5BdAb9480E35eb8915b53Ec38581E4f004";
+  const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "";
   
-  const PANCAKESWAP_URL = "https://pancakeswap.finance/?chain=bsc&outputCurrency=0xF6921B5BdAb9480E35eb8915b53Ec38581E4f004";
-  const TWITTER_URL = "https://x.com/FlashBoomToken";
-  const TELEGRAM_URL = "https://t.me/FlashBoomToken"; // Added Telegram URL
-  const BSCSCAN_URL = "https://bscscan.com/token/0xf6921b5bdab9480e35eb8915b53ec38581e4f004";
+  const PANCAKESWAP_URL = process.env.NEXT_PUBLIC_PANCAKESWAP_URL || "";
+  const TWITTER_URL = process.env.NEXT_PUBLIC_TWITTER_URL || "";
+  const BSCSCAN_URL = process.env.NEXT_PUBLIC_BSCSCAN_URL || "";
 
   useEffect(() => {
     // Simulation of burned tokens increase
@@ -142,7 +141,6 @@ const FlashBoomToken: React.FC = () => {
       </div>
     </div>
   );
-};
 
 export default FlashBoomToken;
           
@@ -159,12 +157,12 @@ export default FlashBoomToken;
               <ExternalLink className="ml-2 h-5 w-5" />
             </Button>
             <Button 
-              onClick={() => window.open(TELEGRAM_URL, "_blank")}
+              onClick={() => window.open(TWITTER_URL, "_blank")}
               variant="outline"
               className="border-blue-500 text-blue-400 hover:bg-blue-500/10"
             >
               Join Our Community
-              <Telegram className="ml-2 h-4 w-4" />
+              <Twitter className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -303,15 +301,7 @@ export default FlashBoomToken;
             >
               <Twitter className="h-8 w-8" />
             </a>
-            <a 
-              href={TELEGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 p-3 rounded-full hover:bg-blue-500/10 transition-colors"
-              title="Join Telegram"
-            >
-              <Telegram className="h-8 w-8" />
-            </a>
+
             <a 
               href={BSCSCAN_URL}
               target="_blank"
@@ -337,3 +327,5 @@ export default FlashBoomToken;
         </div>
       </section>
     </div>
+  )
+};

@@ -12,7 +12,7 @@ interface RoadmapStep {
   status: 'completed' | 'ongoing' | 'upcoming';
 }
 
-const FlashBoomToken: React.FC = () => {
+const FlashBoomToken = () => {
   const [tokensBurned, setTokensBurned] = useState<number>(2451);
   const [holders, setHolders] = useState<number>(1000); // New state for holders count
   const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "";

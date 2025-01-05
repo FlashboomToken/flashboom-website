@@ -73,9 +73,9 @@ const FlashBoomToken: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 via-slate-900 to-slate-900">
+      <section className="relative min-h-screen flex items-center justify-center px-4 pt-16 pb-24 bg-gradient-to-b from-purple-900 via-slate-900 to-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent" />
-        <div className="container mx-auto text-center px-4 relative z-10">
+        <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
           <Image src="/flashboom.png" alt="FBM Logo" width={200} height={200} className="mx-auto mb-8"/>
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
             Explode your gains with FlashBoom (FBM)!
@@ -140,16 +140,15 @@ const FlashBoomToken: React.FC = () => {
         </p>
       </div>
     </div>
-  );
           
           <p className="text-xl mb-8 text-purple-300">
             Join {holders}+ holders riding FBM to the moon! 🚀
           </p>
           
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <Button 
               onClick={() => window.open(PANCAKESWAP_URL, "_blank")}
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-8 py-4 text-lg shadow-lg shadow-blue-500/50"
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-6 py-3 text-base md:text-lg shadow-lg shadow-blue-500/50"
             >
               Buy FBM now
               <ExternalLink className="ml-2 h-5 w-5" />
